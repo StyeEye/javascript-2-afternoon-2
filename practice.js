@@ -36,7 +36,10 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr) {
+  if(arr.length > 0)
+    return arr[arr.length - 1];
+}
 
 
 ////////// PROBLEM 3 //////////
