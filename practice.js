@@ -18,7 +18,10 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr) {
+  if(arr.length > 0)
+    return arr[0];
+}
 
 
 ////////// PROBLEM 2 //////////
