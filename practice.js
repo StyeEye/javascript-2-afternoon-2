@@ -131,7 +131,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray) {
+  const evens = [];
+  const odds = [];
 
+  numbersArray.forEach(num => {
+    if((num % 2) === 0)
+      evens.push(num);
+    else
+      odds.push(num);
+  });
+
+  return [evens, odds];
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -152,7 +164,17 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+function finder(arr) {
+  const randomNum = getRandomArbitrary();
+  let foundMatch = false;
 
+  arr.forEach(element => {
+    if(element === randomNum)
+      foundMatch = true;
+  });
+
+  return foundMatch;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -181,7 +203,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, itemToRemove) {
+  if(!myGroceryList || !itemToRemove)
+    return [];
 
+  for(let i = myGroceryList.length - 1; i >= 0; i--) {
+    if(myGroceryList[i] === itemToRemove)
+      myGroceryList.splice(i, 1);
+  }
+
+  return myGroceryList;
+}
+
+function addItem(myGroceryList, newItem) {
+  if(!myGroceryList || !newItem)
+    return [];
+
+  myGroceryList.push(newItem);
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -191,7 +231,12 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker() {
+  const out = [];
+  for(let i = 1; i <= 215; i++)
+    out.push(i);
+  return out;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -207,7 +252,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
+function addTen(numbers) {
+  numbers.forEach((num, i, arr) => {
+    arr[i] = Number(arr[i]) + 10;
+  });
 
+  return numbers;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -232,7 +283,9 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2) {
+  return arr1.length > arr2.length ? arr1 : arr2;
+}
 
 
 /*
@@ -244,7 +297,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(arr1, arr2) {
+  for(let i = arr.length - 1; i >= 0; i--) {
+    if(!arr2.includes(arr1[i]))
+      arr1.splice(i, 1);
+  }
 
+  return arr1;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -284,8 +344,8 @@ var colt = {
 */
 
 //Code Here
-
-
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 /*
   Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
@@ -293,7 +353,10 @@ var colt = {
 */
 
 //Code Here
-
+for(let i = devMountainEmployees.length - 1; i >= 0; i--) {
+  if(devMountainEmployees[i] === cahlan)
+    devMountainEmployees.splice(i, 1);
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -305,7 +368,7 @@ var colt = {
 */
 
 //Code Here
-
+const users = [];
 
 
 /*
@@ -324,7 +387,13 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+function User(name) {
+  this.name = name;
+  this.email = name + `@gmail.com`;
+  this.password = `hunter1`;
+  this.username = `xxX` + name + `Xxx`;
+}
+users.push(user1, new User(`Bob`), new User(`Carl`));
 
 
 /*
@@ -338,7 +407,10 @@ var user1 = {
 */
 
 //Code Here
-
+for(let i = users.length - 1; i >= 0; i--) {
+  if(users[i].email === `tylermcginnis33@gmail.com`)
+    users.splice(i, 1);
+}
 
 
 /*
